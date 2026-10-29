@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freedom Contracting | Builders in the South Carolina Midlands</title>
+<meta name="description" content="Freedom Contracting builds and remodels homes, rental units, and commercial spaces across the South Carolina Midlands. Clear price, clear plan, clean site every day.">
+<meta name="theme-color" content="#1b1e1a">
+<!-- DEPLOY STEP: patch og:url and og:image with the live absolute URL before zipping -->
+<meta property="og:title" content="Freedom Contracting | Built with care. Made to last.">
+<meta property="og:description" content="Homes, remodels, and rental units across the South Carolina Midlands.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/assets/after-exterior.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231b1e1a'/%3E%3Cpath d='M8 40 L32 18 L56 40' fill='none' stroke='%23f2763c' stroke-width='6' stroke-linecap='square'/%3E%3Cpath d='M44 22 V14 H50 V28' fill='none' stroke='%23f3efe6' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#1b1e1a;
+  --panel:#252923;
+  --panel-2:#2d322b;
+  --brick:#8a3e2c;
+  --accent:#f2763c;
+  --accent-hover:#ff8850;
+  --accent-muted:rgba(242,118,60,.22);
+  --text-secondary:#bdb7aa;
+  --text-primary:#f3efe6;
+  --cream:#f3efe6;
+  --line:rgba(243,239,230,.14);
+  --line-strong:rgba(243,239,230,.42);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+  --display:"Big Shoulders Display","Big Shoulders",Impact,sans-serif;
+  --body:"Public Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:min(1160px,calc(100% - 48px));
+}
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{overflow-x:hidden;overflow-x:clip;margin:0;background:var(--canvas);color:var(--text-primary);font:400 17px/1.65 var(--body);animation:pageIn .9s var(--ease-out) both}
+@keyframes pageIn{from{opacity:0}to{opacity:1}}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--accent);color:#171916;padding:10px 16px;font-weight:600;text-decoration:none;transition:top .3s var(--ease-out)}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* one environment: slow pine-shadow drift behind everything */
+.env{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.env::before{content:"";position:absolute;inset:-20%;background:
+  radial-gradient(40% 30% at 20% 30%,rgba(98,120,84,.16),transparent 70%),
+  radial-gradient(35% 28% at 80% 70%,rgba(138,62,44,.12),transparent 70%),
+  radial-gradient(30% 22% at 60% 15%,rgba(242,118,60,.06),transparent 70%);
+  animation:drift 80s linear infinite;animation-delay:-23s}
+.env::after{content:"";position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes drift{0%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(4%,-3%,0) rotate(3deg)}100%{transform:translate3d(0,0,0) rotate(0)}}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background-color .4s var(--ease-out),border-color .4s var(--ease-out),backdrop-filter .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(27,30,26,.86);backdrop-filter:blur(12px);border-color:var(--line)}
+.nav__in{width:var(--wrap);margin:0 auto;display:flex;align-items:center;gap:28px;height:84px}
+.brand{display:flex;align-items:center;text-decoration:none;background:var(--cream);border-radius:10px;padding:2px 10px;height:64px}
+.brand img{height:60px;width:auto}
+.nav__links{display:flex;gap:26px;margin-left:auto;list-style:none;padding:0;margin-block:0}
+.nav__links a{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--text-secondary);transition:color .25s var(--ease-out)}
+.nav__links a:hover{color:var(--text-primary)}
+@media (max-width:860px){.nav__links{display:none}.nav__in{justify-content:space-between}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:50px;padding:0 20px;border:1px solid var(--line-strong);color:var(--text-primary);font:600 12px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:transparent;transition:transform .3s var(--ease-out),background-color .3s var(--ease-out),border-color .3s var(--ease-out)}
+.btn:hover{transform:translateY(-2px);background:rgba(243,239,230,.08)}
+.btn--primary{background:var(--accent);border-color:var(--accent);color:#171916}
+.btn--primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn span{transition:transform .3s var(--ease-out)}
+.btn:hover span{transform:translateX(3px)}
+.nav .btn{min-height:44px;padding:0 16px}
+@media (pointer:coarse){.btn{min-height:44px}}
+
+/* shared type */
+.kicker{display:flex;align-items:center;gap:11px;margin:0 0 22px;font:500 12px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#f2a174}
+.dot{width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:var(--accent);position:relative}
+.dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;background:var(--accent-muted);animation:pulse 4.5s ease-in-out infinite;animation-delay:-1.2s}
+@keyframes pulse{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:-.01em;margin:0;text-transform:uppercase}
+h2{font-size:clamp(42px,6vw,76px)}
+.lede{color:var(--text-secondary);max-width:52ch;margin:20px 0 0}
+section{position:relative}
+.wrap{width:var(--wrap);margin:0 auto}
+.pad{padding:clamp(80px,10vw,128px) 0}
+
+/* signature: the roofline from the logo, drawing itself */
+.roof{display:block;width:150px;height:44px;margin:0 0 22px;overflow:visible}
+.roof path{fill:none;stroke-width:5;stroke-linecap:square;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s var(--ease-io)}
+.roof .r1{stroke:var(--accent)}
+.roof .r2{stroke:var(--text-primary);stroke-width:3;transition-delay:.9s}
+.in .roof path{stroke-dashoffset:0}
+
+/* entrances */
+.rise{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+.in .rise{opacity:1;transform:none}
+.in .rise.d1{transition-delay:.08s}.in .rise.d2{transition-delay:.18s}.in .rise.d3{transition-delay:.28s}.in .rise.d4{transition-delay:.38s}
+
+/* hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(60px,9vw,128px);line-height:.88}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity 1s var(--ease-out),transform 1s var(--ease-out)}
+.hero h1 .accent{color:var(--accent)}
+.hero.in h1 .w{opacity:1;transform:none}
+.hero.in h1 .w:nth-child(2){transition-delay:.1s}.hero.in h1 .w:nth-child(4){transition-delay:.35s}.hero.in h1 .w:nth-child(5){transition-delay:.45s}.hero.in h1 .w:nth-child(6){transition-delay:.55s}
+.hero__desc{max-width:46ch;color:rgba(243,239,230,.84);margin:26px 0 0}
+.hero__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero__photo{position:relative;margin:0}
+.hero__frame{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:4px;box-shadow:0 40px 90px rgba(0,0,0,.45)}
+.hero__frame img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.08);transition:transform 2.4s var(--ease-out)}
+.hero.in .hero__frame img{transform:scale(1.01)}
+.hero__frame::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,17,15,.55),transparent 40%)}
+.hero__roof{position:absolute;left:-6%;right:-6%;top:-11%;width:112%;height:auto;overflow:visible;pointer-events:none}
+.hero__roof path{fill:none;stroke-linecap:square;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s var(--ease-io) .3s}
+.hero__roof .r1{stroke:var(--accent);stroke-width:9}
+.hero__roof .r2{stroke:var(--text-primary);stroke-width:5;transition-delay:1.6s}
+.hero.in .hero__roof path{stroke-dashoffset:0}
+.note{position:absolute;left:18px;bottom:16px;z-index:2;display:flex;align-items:center;gap:12px;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(243,239,230,.9)}
+.note i{width:34px;height:1px;background:var(--accent)}
+.motes{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.motes b{position:absolute;width:3px;height:3px;border-radius:50%;background:rgba(255,214,170,.55);opacity:0;animation:mote 14s linear infinite}
+@keyframes mote{0%{opacity:0;transform:translate3d(0,0,0)}15%{opacity:.8}85%{opacity:.5}100%{opacity:0;transform:translate3d(-40px,-160px,0)}}
+@media (max-width:860px){.hero__grid{grid-template-columns:1fr}.hero__photo{max-width:440px;margin-top:40px}}
+
+/* promises strip */
+.promise{border-block:1px solid var(--line);background:rgba(37,41,35,.6)}
+.promise ol{list-style:none;margin:0 auto;padding:0;width:var(--wrap);display:grid;grid-template-columns:repeat(3,1fr)}
+.promise li{padding:34px 28px 34px 0;display:flex;gap:16px;align-items:baseline}
+.promise li+li{padding-left:28px;border-left:1px solid var(--line)}
+.promise .n{font:500 12px/1 var(--mono);color:var(--accent);letter-spacing:.1em}
+.promise p{margin:0;font:800 clamp(22px,2.4vw,30px)/1.05 var(--display);text-transform:uppercase}
+@media (max-width:760px){.promise ol{grid-template-columns:1fr}.promise li+li{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* before / after: press and hold */
+.ba__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:center}
+.ba__stage{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:var(--panel);box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.ba__stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba__after{object-position:center 38%;opacity:var(--p,0);transform:scale(calc(1.06 - .06*var(--p,0)))}
+.ba__tag{position:absolute;top:16px;left:16px;z-index:3;padding:8px 12px;background:rgba(8,8,15,.6);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:8px;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.ba__tag .a{display:none;color:var(--accent)}
+.ba.done .ba__tag .a{display:inline}.ba.done .ba__tag .b{display:none}
+.hold{margin-top:30px;display:inline-flex;align-items:center;gap:16px;min-height:60px;padding:0 22px 0 10px;border:1px solid var(--line-strong);background:transparent;color:var(--text-primary);font:600 12px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:none;transition:border-color .3s var(--ease-out),background-color .3s var(--ease-out)}
+.hold:hover{border-color:var(--accent)}
+.hold svg{width:42px;height:42px;transform:rotate(-90deg)}
+.hold circle{fill:none;stroke-width:3}
+.hold .track{stroke:var(--line)}
+.hold .fill{stroke:var(--accent);stroke-dasharray:113;stroke-dashoffset:calc(113 - 113*var(--p,0))}
+.ba.done .hold{border-color:var(--accent);background:var(--accent-muted)}
+.ba__list{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:10px}
+.ba__list li{display:flex;gap:14px;align-items:baseline;opacity:.28;transform:translateX(-8px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.ba__list li::before{content:"";width:18px;height:2px;background:var(--line-strong);transform:translateY(-4px);transition:background-color .6s}
+.ba.done .ba__list li{opacity:1;transform:none}
+.ba.done .ba__list li::before{background:var(--accent)}
+.ba.done .ba__list li:nth-child(2){transition-delay:.15s}.ba.done .ba__list li:nth-child(3){transition-delay:.3s}
+@media (max-width:860px){.ba__grid{grid-template-columns:1fr}.ba__stage{order:-1}}
+
+/* work: masonry of real photos */
+.work__head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.work__grid{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{position:relative;margin:0;overflow:hidden;border-radius:4px;aspect-ratio:3/4;background:var(--panel)}
+.card:nth-child(even){margin-top:56px}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease-out)}
+.card:hover img{transform:scale(1.04)}
+.card figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 18px 18px;background:linear-gradient(0deg,rgba(12,14,12,.88),transparent);font:800 22px/1 var(--display);text-transform:uppercase}
+.card figcaption small{display:block;margin-bottom:8px;font:500 11px/1 var(--mono);letter-spacing:.14em;color:#f2a174}
+.work__grid .card{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+.work.in .work__grid .card{opacity:1;transform:none}
+.work.in .work__grid .card:nth-child(2){transition-delay:.1s}
+.work.in .work__grid .card:nth-child(3){transition-delay:.2s}
+.work.in .work__grid .card:nth-child(4){transition-delay:.3s}
+.work.settled .work__grid .card:nth-child(n){transition-delay:0s}
+@media (max-width:900px){.work__grid{grid-template-columns:repeat(2,1fr)}.card:nth-child(even){margin-top:0}}
+
+/* services: text-led rows */
+.svc{background:linear-gradient(180deg,transparent,rgba(37,41,35,.55) 20%,rgba(37,41,35,.55) 80%,transparent)}
+.svc__rows{margin-top:52px;border-top:1px solid var(--line)}
+.svc__row{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:24px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line)}
+.svc__row .n{font:500 12px/1 var(--mono);color:var(--accent);letter-spacing:.12em}
+.svc__row h3{font-size:clamp(30px,3.6vw,46px)}
+.svc__row p{margin:0;color:var(--text-secondary)}
+@media (max-width:760px){.svc__row{grid-template-columns:1fr;gap:10px}}
+
+/* how it works: plumb line */
+.how__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px)}
+.steps{position:relative;padding:0 0 0 54px}
+.steps ol{list-style:none;margin:0;padding:0}
+.plumb{position:absolute;left:14px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.plumb i{position:absolute;inset:0;background:var(--accent);transform-origin:top;transform:scaleY(var(--d,0))}
+.plumb b{position:absolute;left:50%;top:calc(var(--d,0)*100%);width:14px;height:20px;margin:-2px 0 0 -7px;background:var(--accent);clip-path:polygon(50% 100%,0 35%,20% 0,80% 0,100% 35%)}
+.steps li{position:relative;padding:0 0 56px}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:"";position:absolute;left:-46px;top:10px;width:12px;height:12px;border-radius:50%;border:2px solid var(--line-strong);background:var(--canvas);transition:border-color .5s,background-color .5s}
+.steps li.on::before{border-color:var(--accent);background:var(--accent)}
+.steps .n{font:500 12px/1 var(--mono);letter-spacing:.14em;color:var(--text-secondary)}
+.steps h3{font-size:clamp(28px,3.2vw,40px);margin:10px 0}
+.steps p{margin:0;color:var(--text-secondary);max-width:46ch}
+@media (max-width:860px){.how__grid{grid-template-columns:1fr}}
+
+/* faq */
+.faq__list{margin-top:48px;max-width:860px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:26px 0;font:800 clamp(22px,2.6vw,30px)/1.1 var(--display);text-transform:uppercase;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary span{flex:0 0 auto;font:500 20px/1 var(--mono);color:var(--accent);transition:transform .4s var(--ease-out)}
+.faq details[open] summary span{transform:rotate(45deg)}
+.faq details p{margin:0 0 26px;color:var(--text-secondary);max-width:62ch}
+
+/* estimate */
+.est{background:var(--panel)}
+.est__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:start}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:grid;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
+.field input,.field select,.field textarea{width:100%;min-height:50px;padding:12px 14px;background:var(--canvas);border:1px solid rgba(243,239,230,.38);border-radius:4px;color:var(--text-primary);font:400 16px/1.4 var(--body);transition:border-color .25s var(--ease-out)}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.form .btn{grid-column:1/-1;justify-self:start}
+.ok{grid-column:1/-1;display:none;padding:22px;border:1px solid var(--accent);background:var(--accent-muted);border-radius:4px}
+.ok strong{display:block;font:800 26px/1 var(--display);text-transform:uppercase;margin-bottom:6px}
+.form.sent .field,.form.sent .btn{display:none}
+.form.sent .ok{display:block;animation:pageIn .7s var(--ease-out)}
+@media (max-width:860px){.est__grid{grid-template-columns:1fr}}
+@media (max-width:520px){.form{grid-template-columns:1fr}}
+
+/* footer */
+.foot{padding:56px 0 40px;border-top:1px solid var(--line)}
+.foot__in{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot .brand{height:80px}
+.foot .brand img{height:76px}
+.foot p{margin:0;font:500 12px/1.6 var(--mono);letter-spacing:.08em;color:var(--text-secondary)}
+
+@media (max-height:560px){.motes{display:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important;scroll-behavior:auto!important}
+  .rise,.hero h1 .w,.work__grid .card,.ba__list li{opacity:1!important;transform:none!important}
+  .roof path,.hero__roof path{stroke-dashoffset:0!important}
+  .hero__frame img{transform:none!important}
+  .plumb{--d:1}
+  .card:nth-child(even){margin-top:56px}
+}
+@media (prefers-reduced-motion:reduce) and (max-width:900px){.card:nth-child(even){margin-top:0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="env" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="nav__in">
+    <a class="brand" href="#top" aria-label="Freedom Contracting, home"><img src="assets/logo.png" alt="Freedom Contracting, LLC" width="750" height="546"></a>
+    <ul class="nav__links">
+      <li><a href="#work">Our work</a></li>
+      <li><a href="#services">What we build</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#faq">Questions</a></li>
+    </ul>
+    <a class="btn btn--primary" href="#estimate">Request an estimate</a>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+<section class="hero io" id="top" aria-labelledby="hero-h">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="kicker rise"><span class="dot" aria-hidden="true"></span>Freedom Contracting · South Carolina Midlands</p>
+      <h1 id="hero-h"><span class="w">Built</span> <span class="w">with care.</span><br><span class="w accent">Made</span> <span class="w accent">to</span> <span class="w accent">last.</span></h1>
+      <p class="hero__desc rise d2">Homes, remodels, and rental units across the South Carolina Midlands. We show up, we give you a clear price, and we finish the job.</p>
+      <div class="hero__btns rise d3">
+        <a class="btn btn--primary" href="#estimate">Request an estimate <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="#work">See the work <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <figure class="hero__photo rise d1">
+      <svg class="hero__roof" viewBox="0 0 520 120" aria-hidden="true"><path class="r1" pathLength="1" d="M6 116 L260 10 L514 116"/><path class="r2" pathLength="1" d="M400 58 V30 H424 V70"/></svg>
+      <div class="hero__frame">
+        <img src="assets/after-exterior.jpg" alt="A renovated two-story red brick apartment building with new gray siding, black stair railings, and fresh landscaping" width="1200" height="1600" fetchpriority="high">
+        <div class="motes" aria-hidden="true"><b style="left:22%;top:70%;animation-delay:-2s"></b><b style="left:48%;top:80%;animation-delay:-6s"></b><b style="left:70%;top:62%;animation-delay:-9s"></b><b style="left:36%;top:55%;animation-delay:-12s"></b><b style="left:82%;top:85%;animation-delay:-4s"></b></div>
+      </div>
+      <p class="note"><i aria-hidden="true"></i>Finished job · Midlands, SC</p>
+    </figure>
+  </div>
+</section>
+
+<div class="promise" aria-label="Our promise">
+  <ol>
+    <li><span class="n">01</span><p>We show up when we say we will.</p></li>
+    <li><span class="n">02</span><p>Clear price. Clear plan.</p></li>
+    <li><span class="n">03</span><p>Clean site, every day.</p></li>
+  </ol>
+</div>
+
+<section class="ba pad io" id="before-after" aria-labelledby="ba-h">
+  <div class="wrap ba__grid">
+    <div>
+      <svg class="roof" viewBox="0 0 150 44" aria-hidden="true"><path class="r1" pathLength="1" d="M3 42 L75 4 L147 42"/><path class="r2" pathLength="1" d="M112 20 V10 H120 V26"/></svg>
+      <h2 id="ba-h" class="rise">From boarded up to move-in ready.</h2>
+      <p class="lede rise d1">Same building. Same brick. New siding, new railings, new life. Hold the button to see what we made of it.</p>
+      <button class="hold rise d2" type="button" id="hold" aria-describedby="hold-help">
+        <svg viewBox="0 0 42 42" aria-hidden="true"><circle class="track" cx="21" cy="21" r="18"/><circle class="fill" cx="21" cy="21" r="18"/></svg>
+        <span id="hold-label">Hold to see the after</span>
+      </button>
+      <p class="sr" id="hold-help">Press and hold, or hold the space bar, to reveal the finished building.</p>
+      <ul class="ba__list" aria-live="polite">
+        <li>New siding and a cleaned-up face</li>
+        <li>New stairs, railings, and lighting</li>
+        <li>Fresh beds, mulch, and a lawn you can use</li>
+      </ul>
+    </div>
+    <div class="ba__stage rise d1">
+      <span class="ba__tag"><span class="b">Before</span><span class="a">After</span></span>
+      <img src="assets/before-exterior.jpg" alt="Before: a two-story brick apartment building with boarded windows, a weathered roof, and one side wrapped in house wrap" width="1800" height="1350" loading="lazy">
+      <img class="ba__after" src="assets/after-exterior.jpg" alt="After: the same building finished, with new siding, black railings, and landscaping" width="1200" height="1600" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="work pad io" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <div class="work__head">
+      <div>
+        <svg class="roof" viewBox="0 0 150 44" aria-hidden="true"><path class="r1" pathLength="1" d="M3 42 L75 4 L147 42"/><path class="r2" pathLength="1" d="M112 20 V10 H120 V26"/></svg>
+        <h2 id="work-h" class="rise">The work.</h2>
+      </div>
+      <p class="lede rise d1">Real jobs, photographed as we left them. No staging, no filters.</p>
+    </div>
+    <div class="work__grid">
+      <figure class="card"><img src="assets/work-kitchen.jpg" alt="Galley kitchen with dark shaker cabinets, stainless appliances, marble-look counters, and wood-look floors" width="1200" height="1600" loading="lazy"><figcaption><small>Kitchen</small>Galley kitchen, rebuilt.</figcaption></figure>
+      <figure class="card"><img src="assets/work-bedroom.jpg" alt="Bedroom with new gray wood-look plank floors, white doors, and fresh paint" width="1200" height="1600" loading="lazy"><figcaption><small>Floors</small>New floors, new doors, fresh paint.</figcaption></figure>
+      <figure class="card"><img src="assets/work-tub.jpg" alt="Bathtub with a wood-look tile surround set floor to ceiling" width="1200" height="1600" loading="lazy"><figcaption><small>Bath</small>Tile surround, floor to ceiling.</figcaption></figure>
+      <figure class="card"><img src="assets/work-vanity.jpg" alt="Bathroom with a dark vanity, white sink, chrome faucet, and a white medicine cabinet" width="1200" height="1600" loading="lazy"><figcaption><small>Bath</small>Vanity, fixtures, and finish.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="svc pad io" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <svg class="roof" viewBox="0 0 150 44" aria-hidden="true"><path class="r1" pathLength="1" d="M3 42 L75 4 L147 42"/><path class="r2" pathLength="1" d="M112 20 V10 H120 V26"/></svg>
+    <h2 id="svc-h" class="rise">What we build.</h2>
+    <div class="svc__rows">
+      <div class="svc__row rise d1"><span class="n">01</span><h3>Homes</h3><p>New residential builds and additions.</p></div>
+      <div class="svc__row rise d2"><span class="n">02</span><h3>Remodels</h3><p>Kitchens, baths, floors, and whole-unit refreshes.</p></div>
+      <div class="svc__row rise d3"><span class="n">03</span><h3>Rental and commercial</h3><p>Unit turns that get you back to rent-ready, fast.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="how pad io" id="how" aria-labelledby="how-h">
+  <div class="wrap how__grid">
+    <div>
+      <svg class="roof" viewBox="0 0 150 44" aria-hidden="true"><path class="r1" pathLength="1" d="M3 42 L75 4 L147 42"/><path class="r2" pathLength="1" d="M112 20 V10 H120 V26"/></svg>
+      <h2 id="how-h" class="rise">How it works.</h2>
+      <p class="lede rise d1">Three steps, no surprises. You always know what comes next and who to call.</p>
+    </div>
+    <div class="steps" id="steps">
+      <span class="plumb" aria-hidden="true"><i></i><b></b></span>
+      <ol>
+      <li><span class="n">Step 01</span><h3>We walk the job with you.</h3><p>We come out, look at the space, and listen to what you want done.</p></li>
+      <li><span class="n">Step 02</span><h3>You get a written price.</h3><p>No guessing. You see the work, the cost, and the plan before anything starts.</p></li>
+      <li><span class="n">Step 03</span><h3>We build, then walk it again.</h3><p>We clean up every day, and at the end we walk the finished job with you.</p></li>
+    </ol></div>
+  </div>
+</section>
+
+<section class="faq pad io" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <svg class="roof" viewBox="0 0 150 44" aria-hidden="true"><path class="r1" pathLength="1" d="M3 42 L75 4 L147 42"/><path class="r2" pathLength="1" d="M112 20 V10 H120 V26"/></svg>
+    <h2 id="faq-h" class="rise">Straight answers.</h2>
+    <div class="faq__list rise d1">
+      <details><summary>Will you actually show up? <span aria-hidden="true">+</span></summary><p>Yes. You get a start date before we begin, and if anything changes, we call you. You will not be left wondering where the crew is.</p></details>
+      <details><summary>What if the price changes? <span aria-hidden="true">+</span></summary><p>Your price is in writing before work starts. If you ask for something new, or we find a problem behind a wall, we show you and agree on it with you before we do it.</p></details>
+      <details><summary>Do you work on rentals and apartments? <span aria-hidden="true">+</span></summary><p>Yes. We turn units for landlords and property owners, from floors and paint to full kitchens and baths, and whole building exteriors.</p></details>
+      <details><summary>Who do I talk to during the job? <span aria-hidden="true">+</span></summary><p>One person, from the first walk-through to the final one. You always have a name and a number.</p></details>
+      <details><summary>Where do you work? <span aria-hidden="true">+</span></summary><p>Across the South Carolina Midlands. Not sure if you are in our area? Ask in the form below.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="est pad io" id="estimate" aria-labelledby="est-h">
+  <div class="wrap est__grid">
+    <div>
+      <svg class="roof" viewBox="0 0 150 44" aria-hidden="true"><path class="r1" pathLength="1" d="M3 42 L75 4 L147 42"/><path class="r2" pathLength="1" d="M112 20 V10 H120 V26"/></svg>
+      <h2 id="est-h" class="rise">Request an estimate.</h2>
+      <p class="lede rise d1">Tell us a little about the job. We will set up a time to walk it with you and give you a written price.</p>
+    </div>
+    <form class="form rise d2" id="form" novalidate>
+      <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required placeholder="Jordan Smith"></div>
+      <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required placeholder="(803) 555-0123"></div>
+      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+      <div class="field"><label for="f-type">Project type</label><select id="f-type" name="type"><option>Remodel</option><option>New home or addition</option><option>Rental or unit turn</option><option>Commercial</option><option>Something else</option></select></div>
+      <div class="field full"><label for="f-note">About the job</label><textarea id="f-note" name="note" placeholder="What needs doing, and roughly where?"></textarea></div>
+      <button class="btn btn--primary" type="submit">Request my estimate <span aria-hidden="true">→</span></button>
+      <div class="ok" role="status" tabindex="-1" id="ok"><strong>Got it.</strong>We'll call you within one business day.</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <a class="brand" href="#top" aria-label="Back to top"><img src="assets/logo.png" alt="Freedom Contracting, LLC" width="750" height="546" loading="lazy"></a>
+    <p>Freedom Contracting, LLC · South Carolina Midlands<br>Homes · Remodels · Rental and commercial</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const RM = matchMedia('(prefers-reduced-motion: reduce)');
+
+  // nav goes solid after the hero top
+  const nav = document.getElementById('nav');
+  let solid = null;
+  const navCheck = () => { const s = scrollY > 40; if (s !== solid) { solid = s; nav.classList.toggle('solid', s); } };
+  addEventListener('scroll', navCheck, { passive: true }); navCheck();
+
+  // entrances
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      if (e.target.classList.contains('work')) setTimeout(() => e.target.classList.add('settled'), 1400);
+      io.unobserve(e.target);
+    }
+  }), { threshold: 0.18 });
+  document.querySelectorAll('.io').forEach(s => io.observe(s));
+  requestAnimationFrame(() => document.querySelector('.hero').classList.add('in'));
+
+  // pause loops on hidden tabs
+  document.addEventListener('visibilitychange', () => document.body.classList.toggle('paused', document.hidden));
+
+  // the plumb line draws down the steps as you scroll (rAF loop that rests)
+  const steps = document.getElementById('steps');
+  const plumb = steps.querySelector('.plumb');
+  const items = [...steps.querySelectorAll('li')];
+  let dTarget = 0, dShown = 0, dRaf = null, dLast = 0, stepsOn = false, lastD = -1, lastOn = -1;
+  const plumbTarget = () => {
+    const r = steps.getBoundingClientRect();
+    return Math.min(1, Math.max(0, (innerHeight * 0.62 - r.top) / r.height));
+  };
+  function plumbTick(now) {
+    const dt = Math.min(100, now - (dLast || now)); dLast = now;
+    dShown += (dTarget - dShown) * (1 - Math.pow(1 - 0.14, dt / 16.667));
+    if (Math.abs(dTarget - dShown) < 0.0008) { dShown = dTarget; dRaf = null; dLast = 0; } else dRaf = requestAnimationFrame(plumbTick);
+    paintPlumb(dShown);
+  }
+  function paintPlumb(d) {
+    const v = Math.round(d * 1000) / 1000;
+    if (v !== lastD) { lastD = v; plumb.style.setProperty('--d', v); }
+    const on = items.filter((li, i) => d >= (i / (items.length - 1)) * 0.92).length;
+    if (on !== lastOn) { lastOn = on; items.forEach((li, i) => li.classList.toggle('on', i < on)); }
+  }
+  const onScrollPlumb = () => { if (!stepsOn || RM.matches) return; dTarget = plumbTarget(); if (dRaf === null) dRaf = requestAnimationFrame(plumbTick); };
+  new IntersectionObserver(es => { stepsOn = es[0].isIntersecting; onScrollPlumb(); }).observe(steps);
+  addEventListener('scroll', onScrollPlumb, { passive: true });
+
+  // press and hold: before to after
+  const ba = document.querySelector('.ba');
+  const stage = ba.querySelector('.ba__stage');
+  const hold = document.getElementById('hold');
+  const label = document.getElementById('hold-label');
+  const HOLD_MS = 1400;
+  let p = 0, holding = false, done = false, hRaf = null, hLast = 0, lastP = -1;
+  const paintHold = () => {
+    const v = Math.round(p * 1000) / 1000;
+    if (v !== lastP) { lastP = v; stage.style.setProperty('--p', v); hold.style.setProperty('--p', v); }
+  };
+  function holdTick(now) {
+    const dt = Math.min(100, now - (hLast || now)); hLast = now;
+    if (holding) p = Math.min(1, p + dt / HOLD_MS);
+    else p += (0 - p) * (1 - Math.pow(1 - 0.12, dt / 16.667));   // release eases back, never snaps
+    if (p >= 1 && holding) { finish(); }
+    paintHold();
+    if (done || (!holding && p < 0.001)) { if (!done) { p = 0; paintHold(); } hRaf = null; hLast = 0; return; }
+    hRaf = requestAnimationFrame(holdTick);
+  }
+  function finish() {
+    done = true; holding = false; p = 1; paintHold();
+    ba.classList.add('done'); label.textContent = 'Show the before again';
+  }
+  function reset() { done = false; p = 0; paintHold(); ba.classList.remove('done'); label.textContent = 'Hold to see the after'; }
+  function start(e) {
+    if (e) e.preventDefault();
+    if (done) { reset(); return; }
+    if (RM.matches) { finish(); return; }
+    holding = true; if (hRaf === null) hRaf = requestAnimationFrame(holdTick);
+  }
+  function stop() { if (!holding) return; holding = false; if (hRaf === null) hRaf = requestAnimationFrame(holdTick); }
+  hold.addEventListener('pointerdown', start);
+  ['pointerup', 'pointerleave', 'pointercancel'].forEach(t => hold.addEventListener(t, stop));
+  hold.addEventListener('keydown', e => { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) start(e); });
+  hold.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') stop(); });
+  hold.addEventListener('click', e => e.preventDefault());
+
+  // reduced motion, live in both directions
+  function pinToFinalStates() {
+    if (dRaf !== null) { cancelAnimationFrame(dRaf); dRaf = null; }
+    dShown = dTarget = 1; paintPlumb(1);
+  }
+  function unpinFinalStates() { dShown = 0; lastD = -1; lastOn = -1; dTarget = plumbTarget(); paintPlumb(0); onScrollPlumb(); }
+  RM.addEventListener('change', e => e.matches ? pinToFinalStates() : unpinFinalStates());
+  if (RM.matches) pinToFinalStates();
+
+  // estimate form (preview: shows the thank-you state; delivery is set up before launch)
+  const form = document.getElementById('form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const bad = [...form.querySelectorAll('[required]')].find(i => !i.value.trim());
+    if (bad) { bad.focus(); bad.setAttribute('aria-invalid', 'true'); return; }
+    form.classList.add('sent');
+    document.getElementById('ok').focus();
+  });
+})();
+</script>
+</body>
+</html>
