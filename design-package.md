@@ -53,3 +53,10 @@ Blob fetch with loading ring, dt-normalized lerp, gated seeks, delta-gated DOM w
 
 ## 9. Copy gate
 Every line above ships verbatim. The built page must pass the grep gate (zero em dashes, zero stock words) and the AI-tell sweep. The staccato "Clear price. Clear plan. Clean site, every day." is a deliberate device.
+
+## Status (handoff for the next session)
+- Site built and tested: `freedom-contracting/index.html` + `assets/`. Design package above is the source of truth for copy.
+- og tags patched for https://www.freedomcontractingsc.com/ (domain is at Hostinger).
+- Hero video not made: Higgsfield free plan cannot generate ("Requires basic plan or higher"). Static hero ships; video slots in later.
+- Deploy path chosen: the owner allows `developers.hostinger.com` and adds `HOSTINGER_API_TOKEN` to the environment, then a new session deploys via the Hostinger MCP (`claude mcp add hostinger -e HOSTINGER_API_TOKEN=$HOSTINGER_API_TOKEN -- npx -y hostinger-api-mcp`) or the API directly. Zip the CONTENTS of `freedom-contracting/`.
+- Still open before launch: the estimate form sends nowhere (needs the owner's phone and email, and mailto or a form service). The owner should confirm the "call within one business day" promise, the written-price and single-contact promises, and that the before/after photos show the same building.
