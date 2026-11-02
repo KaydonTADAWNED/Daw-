@@ -233,6 +233,14 @@ section{position:relative}
 @media (max-width:860px){.est__grid{grid-template-columns:1fr}}
 @media (max-width:520px){.form{grid-template-columns:1fr}}
 
+/* call card */
+.call{margin-top:34px;display:inline-grid;gap:6px;padding:20px 24px;border:1px solid var(--line-strong);border-radius:4px;text-decoration:none;transition:border-color .3s var(--ease-out),transform .3s var(--ease-out)}
+.call:hover{border-color:var(--accent);transform:translateY(-2px)}
+.call small{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
+.call strong{font:800 clamp(34px,4vw,46px)/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--text-primary)}
+
 /* footer */
 .foot{padding:56px 0 40px;border-top:1px solid var(--line)}
 .foot__in{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
@@ -380,7 +388,7 @@ section{position:relative}
       <details><summary>Will you actually show up? <span aria-hidden="true">+</span></summary><p>Yes. You get a start date before we begin, and if anything changes, we call you. You will not be left wondering where the crew is.</p></details>
       <details><summary>What if the price changes? <span aria-hidden="true">+</span></summary><p>Your price is in writing before work starts. If you ask for something new, or we find a problem behind a wall, we show you and agree on it with you before we do it.</p></details>
       <details><summary>Do you work on rentals and apartments? <span aria-hidden="true">+</span></summary><p>Yes. We turn units for landlords and property owners, from floors and paint to full kitchens and baths, and whole building exteriors.</p></details>
-      <details><summary>Who do I talk to during the job? <span aria-hidden="true">+</span></summary><p>One person, from the first walk-through to the final one. You always have a name and a number.</p></details>
+      <details><summary>Who do I talk to during the job? <span aria-hidden="true">+</span></summary><p>One person, from the first walk-through to the final one. You always have a name and a number. To reach us anytime, call 803-272-6117.</p></details>
       <details><summary>Where do you work? <span aria-hidden="true">+</span></summary><p>We are based in Lexington, South Carolina, and work in and around it. Not sure if you are in our area? Ask in the form below.</p></details>
     </div>
   </div>
@@ -392,6 +400,7 @@ section{position:relative}
       <svg class="roof" viewBox="0 0 150 44" aria-hidden="true"><path class="r1" pathLength="1" d="M3 42 L75 4 L147 42"/><path class="r2" pathLength="1" d="M112 20 V10 H120 V26"/></svg>
       <h2 id="est-h" class="rise">Request an estimate.</h2>
       <p class="lede rise d1">Tell us a little about the job. We will set up a time to walk it with you and give you a written price.</p>
+      <a class="call rise d2" href="tel:+18032726117"><small>Rather talk it through? Call us</small><strong>803-272-6117</strong></a>
     </div>
     <form class="form rise d2" id="form" novalidate>
       <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required placeholder="Jordan Smith"></div>
@@ -409,7 +418,7 @@ section{position:relative}
 <footer class="foot">
   <div class="wrap foot__in">
     <a class="brand" href="#top" aria-label="Back to top"><img src="assets/logo.png" alt="Freedom Contracting, LLC" width="750" height="546" loading="lazy"></a>
-    <p>Freedom Contracting, LLC · Lexington, South Carolina<br>Homes · Remodels · Rental and commercial</p>
+    <p>Freedom Contracting, LLC · Lexington, South Carolina<br><a href="tel:+18032726117">803-272-6117</a><br>Homes · Remodels · Rental and commercial</p>
   </div>
 </footer>
 
