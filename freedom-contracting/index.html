@@ -228,8 +228,11 @@ section{position:relative}
 .form .btn{grid-column:1/-1;justify-self:start}
 .ok{grid-column:1/-1;display:none;padding:22px;border:1px solid var(--accent);background:var(--accent-muted);border-radius:4px}
 .ok strong{display:block;font:800 26px/1 var(--display);text-transform:uppercase;margin-bottom:6px}
-.form.sent .field,.form.sent .btn{display:none}
+.form.sent .field,.form.sent>.btn{display:none}
 .form.sent .ok{display:block;animation:pageIn .7s var(--ease-out)}
+.ok p{margin:0 0 16px}
+.ok__acts{display:flex;flex-wrap:wrap;gap:12px}
+.ok pre{margin:16px 0 0;padding:14px;background:var(--canvas);border:1px solid var(--line);border-radius:4px;font:400 13px/1.5 var(--mono);white-space:pre-wrap;word-break:break-word;color:var(--text-secondary)}
 @media (max-width:860px){.est__grid{grid-template-columns:1fr}}
 @media (max-width:520px){.form{grid-template-columns:1fr}}
 
@@ -409,7 +412,7 @@ section{position:relative}
       <div class="field"><label for="f-type">Project type</label><select id="f-type" name="type"><option>Remodel</option><option>New home or addition</option><option>Rental or unit turn</option><option>Commercial</option><option>Something else</option></select></div>
       <div class="field full"><label for="f-note">About the job</label><textarea id="f-note" name="note" placeholder="What needs doing, and roughly where?"></textarea></div>
       <button class="btn btn--primary" type="submit">Request my estimate <span aria-hidden="true">→</span></button>
-      <div class="ok" role="status" tabindex="-1" id="ok"><strong>Got it.</strong>We'll call you within one business day.</div>
+      <div class="ok" role="status" tabindex="-1" id="ok"><strong>Almost there.</strong><p>Your request is written up as a text to 803-272-6117. Hit send and we'll call you within one business day.</p><div class="ok__acts"><a class="btn btn--primary" id="ok-sms" href="sms:+18032726117">Open my text app <span aria-hidden="true">→</span></a><button class="btn" type="button" id="ok-copy">Copy message</button></div><pre id="ok-msg"></pre></div>
     </form>
   </div>
 </section>
@@ -518,14 +521,44 @@ section{position:relative}
   RM.addEventListener('change', e => e.matches ? pinToFinalStates() : unpinFinalStates());
   if (RM.matches) pinToFinalStates();
 
-  // estimate form (preview: shows the thank-you state; delivery is set up before launch)
+  // estimate form: SMS postscript. On submit, the request is written up as a
+  // text to the office line and the visitor's messaging app opens with it ready to send.
+  const SMS_TO = '+18032726117';
   const form = document.getElementById('form');
+  const ok = document.getElementById('ok');
+  const okSms = document.getElementById('ok-sms');
+  const okCopy = document.getElementById('ok-copy');
+  const okMsg = document.getElementById('ok-msg');
+  const val = n => (form.elements[n].value || '').trim();
+  function smsBody() {
+    return [
+      'Estimate request (freedomcontractingsc.com)',
+      'Name: ' + val('name'),
+      'Phone: ' + val('phone'),
+      val('email') && 'Email: ' + val('email'),
+      'Project: ' + val('type'),
+      val('note') && 'About the job: ' + val('note')
+    ].filter(Boolean).join('\n');
+  }
+  // iOS reads "&body=", Android reads "?body="; "?&body=" satisfies both.
+  const smsHref = body => 'sms:' + SMS_TO + '?&body=' + encodeURIComponent(body);
+  const isPhone = matchMedia('(pointer:coarse)').matches && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  form.querySelectorAll('[required]').forEach(i => i.addEventListener('input', () => i.removeAttribute('aria-invalid')));
   form.addEventListener('submit', e => {
     e.preventDefault();
     const bad = [...form.querySelectorAll('[required]')].find(i => !i.value.trim());
     if (bad) { bad.focus(); bad.setAttribute('aria-invalid', 'true'); return; }
+    const body = smsBody();
+    okSms.href = smsHref(body);
+    okMsg.textContent = body;
     form.classList.add('sent');
-    document.getElementById('ok').focus();
+    ok.focus();
+    if (isPhone) window.location.href = okSms.href;
+  });
+  okCopy.addEventListener('click', () => {
+    const done = () => { okCopy.textContent = 'Copied'; };
+    if (navigator.clipboard) navigator.clipboard.writeText(okMsg.textContent).then(done, () => {});
+    else { const r = document.createRange(); r.selectNodeContents(okMsg); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); document.execCommand('copy'); done(); }
   });
 })();
 </script>

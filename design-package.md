@@ -42,7 +42,7 @@ Headline "Built with care. Made to last." Subline "Homes, remodels, and rental u
 3. **What we build**: Homes ("New residential builds and additions."), Remodels ("Kitchens, baths, floors, and whole-unit refreshes."), Rental and commercial ("Unit turns that get you back to rent-ready, fast.").
 4. **How it works**, three steps with drawn SVG marks: 1 "We walk the job with you." 2 "You get a written price. No guessing." 3 "We build, clean up daily, and walk it again with you at the end."
 5. **Straight answers (FAQ)**: "Will you actually show up?" / "What if the price changes?" / "Do you work on rentals and apartments?" / "Who do I talk to during the job?" / "Where do you work?"
-6. **Estimate form**: name, phone, email, project type, short note. Button "Request my estimate". Success "Got it. We'll call you within one business day." Handling: TBD with the client (mailto or form service; contact details needed).
+6. **Estimate form**: name, phone, email, project type, short note. Button "Request my estimate". Success "Almost there." + "Your request is written up as a text to 803-272-6117. Hit send and we'll call you within one business day." Handling: SMS (sms: link prefilled with the request).
 7. **Footer**: logo, "Freedom Contracting, LLC · South Carolina Midlands", contact.
 
 ## 7. Vector layer
@@ -59,4 +59,5 @@ Every line above ships verbatim. The built page must pass the grep gate (zero em
 - og tags patched for https://www.freedomcontractingsc.com/ (domain is at Hostinger).
 - Hero video not made: Higgsfield free plan cannot generate ("Requires basic plan or higher"). Static hero ships; video slots in later.
 - Deploy path chosen: the owner allows `developers.hostinger.com` and adds `HOSTINGER_API_TOKEN` to the environment, then a new session deploys via the Hostinger MCP (`claude mcp add hostinger -e HOSTINGER_API_TOKEN=$HOSTINGER_API_TOKEN -- npx -y hostinger-api-mcp`) or the API directly. Zip the CONTENTS of `freedom-contracting/`.
-- Still open before launch: the estimate form sends nowhere (needs the owner's phone and email, and mailto or a form service). The owner should confirm the "call within one business day" promise, the written-price and single-contact promises, and that the before/after photos show the same building.
+- Estimate form now delivers by SMS: on submit it writes the request up as a text to 803-272-6117 and opens the visitor's messaging app (desktop gets "Open my text app" + "Copy message"). The visitor still has to hit send; for fully automatic delivery, swap in a form service or Twilio backend later.
+- Still open before launch: The owner should confirm the "call within one business day" promise, the written-price and single-contact promises, and that the before/after photos show the same building.
